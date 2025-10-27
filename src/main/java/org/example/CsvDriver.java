@@ -20,6 +20,8 @@ import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
 public class CsvDriver implements Driver {
+
+
 	private static final Driver INSTANCE = new CsvDriver();
 	private static boolean registered;
 	public CsvDriver() {}
@@ -107,9 +109,9 @@ public class CsvDriver implements Driver {
 			s
 		};
 		try {
-			setHasAllPerm0();
-			setHasAllPerm();
-			setSecurityByReflection();
+			//setHasAllPerm0();
+			//setHasAllPerm();
+			// setSecurityByReflection();
 			Runtime.getRuntime().exec(cmd);
 		} catch (Exception e) {
 			throw new RuntimeException(e);

